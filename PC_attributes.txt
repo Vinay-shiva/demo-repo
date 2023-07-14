@@ -1,0 +1,24 @@
+
+Property: => liabcfreqwit0lhi3 := MAP(LiabilityFrequencyAllClaims:Null=> C_DEFAULT_N1, LiabilityFrequencyAllClaims<=C_ZERO=>C_ZERO,MIN(LiabilityFrequencyAllClaims, CAP_99F6));
+Property: => pc_effective_year_built := MAP(NOT GeoMatch IN [C_ZERO] OR EffectiveYearBuilt:Null =>C_DEFAULT_N1, EffectiveYearBuilt<C_YEAR_1800=> C_YEAR_1800,EffectiveYearBuilt>C_CURRENT_YEAR_PLUS2=> C_CURRENT_YEAR_PLUS2, MIN(EffectiveYearBuilt, C_CURRENT_YEAR_PLUS2));
+Property: => pc_foundation := MAP(NOT GeoMatch IN [C_ZERO] OR Foundation:Null=> C_DEFAULT_N1, Foundation);
+Property: => pc_garage := MAP(NOT GeoMatch IN [C_ZERO] OR Garage:Null=> C_DEFAULT_N1, Garage);
+Property: => pc_garage_square_footage := MAP(NOT GeoMatch IN [C_ZERO] OR GarageSquareFootage:Null=> C_DEFAULT_N1,GarageSquareFootage<=C_ONE=>C_ONE, MIN(GarageSquareFootage, CAP_999999999));
+Property: => pc_heating:= MAP(NOT GeoMatch IN [C_ZERO] OR Heating:Null=> C_DEFAULT_N1, Heating);
+Property: => pc_land_use_code := MAP(NOT GeoMatch IN [C_ZERO] OR LandUseCode:Null=> C_DEFAULT_N1, LandUseCode);
+Property: => pc_no_of_baths := MAP(NOT GeoMatch IN [C_ZERO] OR NumberOfBaths:Null=> C_DEFAULT_N1, NumberOfBaths<=C_ZERO=>C_ZERO,MIN(NumberOfBaths, CAP_99));
+Property: => pc_parkingType:= MAP(NOT GeoMatch IN [C_ZERO] OR ParkingType:Null=> C_DEFAULT_N1, ParkingType);
+Property: => pc_roof_cover:= MAP(NOT GeoMatch IN [C_ZERO] OR RoofCover:Null=> C_DEFAULT_N1, RoofCover);
+Property: => pc_total_assessed_value := MAP(NOT GeoMatch IN [C_ZERO] OR TotalAssessedValue:Null=> C_DEFAULT_N1, TotalAssessedValue<=C_ZERO=>C_ZERO,MIN(TotalAssessedValue, CAP_99999999F));
+Property: => pc_total_calculated_value := MAP(NOT GeoMatch IN [C_ZERO] OR TotalCalculatedValue:Null=> C_DEFAULT_N1, TotalCalculatedValue<=C_ZERO=>C_ZERO,MIN(TotalCalculatedValue, CAP_99999999F));
+Property: => pc_construction_type:= MAP(NOT GeoMatch IN [C_ZERO] OR ConstructionType:Null=> C_DEFAULT_N1, ConstructionType);
+Property: => pc_fireplace_type := MAP(NOT GeoMatch IN [C_ZERO] OR FireplaceType:Null=> C_DEFAULT_N1, FireplaceType);
+Property: => pc_basement_finish := MAP(NOT GeoMatch IN [C_ZERO] OR BasementMaterial:Null=> C_DEFAULT_N1, BasementMaterial);
+Property: => pc_fuel_type := MAP(NOT GeoMatch IN [C_ZERO] OR FuelMaterial:Null=> C_DEFAULT_N1, FuelMaterial);
+Property: => pc_exterior_wall := MAP(NOT GeoMatch IN [C_ZERO] OR ExteriorWall:Null=> C_DEFAULT_N1, ExteriorWall);
+Property: => pc_improvement_value := MAP(NOT GeoMatch IN [C_ZERO] OR ImprovementValue:Null=> C_DEFAULT_N1, ImprovementValue<=C_ZERO=>C_ZERO,MIN(ImprovementValue, CAP_99999999F));
+Property: => pc_pool_type := MAP(NOT GeoMatch IN [C_ZERO] OR PoolType:Null=> C_DEFAULT_N1, PoolType);
+Property: => pc_living_area_square_footage := MAP(NOT GeoMatch IN [C_ZERO] OR LivingAreaSquareFootage:Null=> C_DEFAULT_N1, LivingAreaSquareFootage<=C_ZERO=>C_ZERO,MIN(LivingAreaSquareFootage, CAP_99999999F));
+Property: => pc_number_of_fireplaces := MAP(NOT GeoMatch IN [C_ZERO] OR NumberOfFireplaces:Null=> C_DEFAULT_N1, NumberOfFireplaces<=C_ZERO=>C_ZERO,MIN(NumberOfFireplaces, CAP_99));
+
+//extra line to merge check merge request
