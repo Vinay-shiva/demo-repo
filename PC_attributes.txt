@@ -20,3 +20,5 @@ Property: => pc_improvement_value := MAP(NOT GeoMatch IN [C_ZERO] OR Improvement
 Property: => pc_pool_type := MAP(NOT GeoMatch IN [C_ZERO] OR PoolType:Null=> C_DEFAULT_N1, PoolType);
 Property: => pc_living_area_square_footage := MAP(NOT GeoMatch IN [C_ZERO] OR LivingAreaSquareFootage:Null=> C_DEFAULT_N1, LivingAreaSquareFootage<=C_ZERO=>C_ZERO,MIN(LivingAreaSquareFootage, CAP_99999999F));
 Property: => pc_number_of_fireplaces := MAP(NOT GeoMatch IN [C_ZERO] OR NumberOfFireplaces:Null=> C_DEFAULT_N1, NumberOfFireplaces<=C_ZERO=>C_ZERO,MIN(NumberOfFireplaces, CAP_99));
+
+//extra line to merge check merge request
